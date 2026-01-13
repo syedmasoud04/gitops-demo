@@ -1,0 +1,52 @@
+replicaCount: 1
+
+image:
+  repository: syedmasoud/gitops-demo-app
+  pullPolicy: IfNotPresent
+  tag: "v1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+  automount: true
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: false
+
+resources: {}
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: 5000
+readinessProbe:
+  httpGet:
+    path: /
+    port: 5000
+
+autoscaling:
+  enabled: false
+
+volumes: []
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+env:
+  VERSION: "v1"
