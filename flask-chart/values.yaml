@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: syedmasoud/gitops-demo-app
   pullPolicy: IfNotPresent
-  tag: "v1"
+  tag: "v2"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -49,4 +49,4 @@ tolerations: []
 affinity: {}
 
 env:
-  VERSION: "v1"
+  VERSION: "v2"
